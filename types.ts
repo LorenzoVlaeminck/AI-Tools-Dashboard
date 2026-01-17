@@ -3,8 +3,8 @@ export enum ToolCategory {
   IMAGE = 'Image Generation',
   VIDEO = 'Video Creation',
   AUDIO = 'Audio & Speech',
-  PRODUCTIVITY = 'Productivity',
-  DEV = 'Development'
+  SOCIAL = 'Social Media',
+  PRODUCTIVITY = 'Productivity'
 }
 
 export interface Tool {
@@ -18,6 +18,7 @@ export interface Tool {
   monthlyVisits?: string;
   imageUrl: string;
   features: string[];
+  offer?: string; // Special affiliate offer (e.g., "20% Off")
 }
 
 export interface ChatMessage {

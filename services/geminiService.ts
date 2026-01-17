@@ -1,5 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { AI_TOOLS_DATA } from "../constants";
+import { Tool } from "../types";
 
 let aiClient: GoogleGenAI | null = null;
 
@@ -13,30 +14,31 @@ const getClient = () => {
   return aiClient;
 };
 
-export const generateRecommendation = async (userQuery: string): Promise<string> => {
+export const generateRecommendation = async (userQuery: string, currentTools: Tool[] = AI_TOOLS_DATA): Promise<string> => {
   const client = getClient();
   if (!client) {
     return "Please configure your API Key to use the AI Concierge.";
   }
 
-  // Create a context string from our tools database
-  const toolsContext = AI_TOOLS_DATA.map(t => 
-    `- ${t.name} (${t.category}): ${t.description}. Price: ${t.priceModel}. Rating: ${t.rating}/5`
+  // Create a context string from the provided tools list (which might be synced from Notion)
+  const toolsContext = currentTools.map(t => 
+    `- ${t.name} (${t.category}): ${t.description}. Price: ${t.priceModel}. Rating: ${t.rating}/5. ${t.offer ? `**Special Offer**: ${t.offer}` : ''}`
   ).join('\n');
 
   const systemInstruction = `
-    You are an expert AI software consultant for an affiliate dashboard.
+    You are an expert AI software consultant for a content creation affiliate dashboard.
     Your goal is to recommend the best tools from the provided list based on the user's request.
     
-    Here is the database of available tools:
+    Here is the database of available tools (Live Data):
     ${toolsContext}
 
     Rules:
-    1. Only recommend tools from this list if they fit. If nothing fits perfectly, explain why, but suggest the closest match.
-    2. Be concise and persuasive.
-    3. Emphasize the key benefit relevant to their query.
-    4. If the user asks general questions about content creation, answer them but try to mention a tool from the list.
-    5. Do not hallucinate links.
+    1. **Prioritize Matches**: Only recommend tools from this list if they fit. If nothing fits perfectly, explain why, but suggest the closest match.
+    2. **Be Persuasive**: Emphasize the key benefit relevant to their query.
+    3. **Highlight Offers**: If a tool has a "Special Offer", you MUST mention it to encourage the user to click.
+    4. **Formatting**: Use **bold** text for tool names and key offers (e.g. **Jasper AI**). Do not use Markdown headers (###) or bullet points, use natural language or simple lists.
+    5. **No Hallucinations**: Do not hallucinate links. The user will click the cards in the UI.
+    6. **Conciseness**: Keep answers under 100 words unless detailed comparison is asked.
   `;
 
   try {

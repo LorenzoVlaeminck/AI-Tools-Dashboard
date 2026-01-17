@@ -1,128 +1,192 @@
 import { Tool, ToolCategory } from './types';
 
-// NOTE: In a real production app, this data would be fetched from your Notion Database API
-// or a proxy server. For this dashboard, we simulate the database state here.
-// Update the 'affiliateLink' fields with your actual unique affiliate URLs.
-
+// Simulating Notion Database Export for Content Creation Tools
 export const AI_TOOLS_DATA: Tool[] = [
   {
     id: '1',
     name: 'Jasper AI',
-    description: 'Advanced AI content generator for marketing copy, blog posts, and social media.',
+    description: 'The industry standard for AI marketing copy, blog posts, and brand voice consistency.',
     category: ToolCategory.TEXT,
     affiliateLink: 'https://jasper.ai?fpr=your-id',
     priceModel: 'Paid',
     rating: 4.8,
     monthlyVisits: '5M+',
     imageUrl: 'https://picsum.photos/400/200?random=1',
-    features: ['Brand Voice', 'SEO Integration', '50+ Templates']
+    features: ['Brand Voice', 'SEO Mode', 'Marketing Templates', 'Chrome Extension', '25+ Languages'],
+    offer: '7-Day Free Trial'
   },
   {
     id: '2',
     name: 'Midjourney',
-    description: 'Generates hyper-realistic images from text prompts via Discord.',
+    description: 'Create award-winning realistic images and art from text prompts via Discord.',
     category: ToolCategory.IMAGE,
     affiliateLink: 'https://midjourney.com',
     priceModel: 'Paid',
     rating: 4.9,
     monthlyVisits: '15M+',
     imageUrl: 'https://picsum.photos/400/200?random=2',
-    features: ['High Resolution', 'Artistic Styles', 'Discord Community']
+    features: ['Photorealism', 'V6 Model', 'Discord Interface', 'Region Vary', 'Style Tuner']
   },
   {
     id: '3',
     name: 'Copy.ai',
-    description: 'AI-powered copywriter for businesses and freelance writers.',
+    description: 'Automate your content workflow. Great for social media captions and email sequences.',
     category: ToolCategory.TEXT,
     affiliateLink: 'https://copy.ai?ref=your-id',
     priceModel: 'Freemium',
     rating: 4.6,
     monthlyVisits: '3M+',
     imageUrl: 'https://picsum.photos/400/200?random=3',
-    features: ['Unlimited Words (Pro)', '90+ Tools', 'Blog Wizard']
+    features: ['Workflow Automation', 'Unlimited Words (Pro)', 'Chat'],
+    offer: '40% Off Annual Plan'
   },
   {
     id: '4',
-    name: 'Runway Gen-2',
-    description: 'A robust video editing and generation suite powered by AI.',
+    name: 'Runway',
+    description: 'Professional video generation and editing. Text-to-video and video-to-video transformation.',
     category: ToolCategory.VIDEO,
     affiliateLink: 'https://runwayml.com?ref=your-id',
     priceModel: 'Freemium',
     rating: 4.7,
     monthlyVisits: '2M+',
     imageUrl: 'https://picsum.photos/400/200?random=4',
-    features: ['Text to Video', 'Inpainting', 'Green Screen']
+    features: ['Gen-2 Model', 'Motion Brush', 'Green Screen']
   },
   {
     id: '5',
     name: 'ElevenLabs',
-    description: 'The most realistic AI text-to-speech and voice cloning software.',
+    description: 'Generate top-quality spoken audio in any voice and style. Best for narration.',
     category: ToolCategory.AUDIO,
     affiliateLink: 'https://elevenlabs.io/?from=your-id',
     priceModel: 'Freemium',
     rating: 4.9,
     monthlyVisits: '8M+',
     imageUrl: 'https://picsum.photos/400/200?random=5',
-    features: ['Voice Cloning', 'Multilingual', 'API Access']
+    features: ['Voice Cloning', 'Dubbing Studio', 'Low Latency'],
+    offer: '1st Month for $1'
   },
   {
     id: '6',
-    name: 'Notion AI',
-    description: 'Integrated AI assistant within your Notion workspace for notes and docs.',
-    category: ToolCategory.PRODUCTIVITY,
-    affiliateLink: 'https://notion.so?aff=your-id',
-    priceModel: 'Paid',
+    name: 'Opus Clip',
+    description: 'Repurpose long videos into viral shorts in one click using AI curation.',
+    category: ToolCategory.VIDEO,
+    affiliateLink: 'https://opus.pro?ref=your-id',
+    priceModel: 'Freemium',
     rating: 4.8,
-    monthlyVisits: '150M+',
+    monthlyVisits: '4M+',
     imageUrl: 'https://picsum.photos/400/200?random=6',
-    features: ['Summarization', 'Translation', 'Brainstorming']
+    features: ['Auto-Captioning', 'Virality Score', 'Face Focus'],
+    offer: 'Free Forever Plan'
   },
   {
     id: '7',
     name: 'Synthesia',
-    description: 'Create professional AI videos from text in 120+ languages.',
+    description: 'Turn text into videos with AI avatars. No cameras or actors needed.',
     category: ToolCategory.VIDEO,
     affiliateLink: 'https://synthesia.io/?via=your-id',
     priceModel: 'Paid',
     rating: 4.5,
     monthlyVisits: '1M+',
     imageUrl: 'https://picsum.photos/400/200?random=7',
-    features: ['AI Avatars', '120+ Languages', 'Screen Recorder']
+    features: ['160+ Avatars', '120+ Languages', 'Script Assistant']
   },
   {
     id: '8',
-    name: 'GitHub Copilot',
-    description: 'AI pair programmer that helps you write code faster.',
-    category: ToolCategory.DEV,
-    affiliateLink: 'https://github.com/features/copilot',
+    name: 'HypeFury',
+    description: 'Your personal assistant for growing & monetizing your Twitter/X audience.',
+    category: ToolCategory.SOCIAL,
+    affiliateLink: 'https://hypefury.com?via=your-id',
     priceModel: 'Paid',
-    rating: 4.9,
-    monthlyVisits: '400M+',
+    rating: 4.7,
+    monthlyVisits: '500k+',
     imageUrl: 'https://picsum.photos/400/200?random=8',
-    features: ['Code Completion', 'Chat', 'Debugging']
+    features: ['Auto-Plug', 'Thread Maker', 'Evergreen Slots']
   },
   {
     id: '9',
     name: 'Descript',
-    description: 'All-in-one video and audio editing, as easy as a doc.',
+    description: 'Edit audio and video by editing text. Includes studio sound and overdub.',
     category: ToolCategory.AUDIO,
     affiliateLink: 'https://descript.com?lmref=your-id',
     priceModel: 'Freemium',
     rating: 4.7,
     monthlyVisits: '2.5M+',
     imageUrl: 'https://picsum.photos/400/200?random=9',
-    features: ['Overdub', 'Studio Sound', 'Transcription']
+    features: ['Text-Based Editing', 'Studio Sound', 'Eye Contact Fix'],
+    offer: '1 Free Hour/Mo'
   },
   {
     id: '10',
-    name: 'Canva Magic Studio',
-    description: 'A suite of AI tools integrated into the Canva design platform.',
+    name: 'Leonardo.Ai',
+    description: 'Create production-quality visual assets for your projects with speed and style consistency.',
     category: ToolCategory.IMAGE,
-    affiliateLink: 'https://canva.com?click=your-id',
+    affiliateLink: 'https://leonardo.ai?via=your-id',
     priceModel: 'Freemium',
     rating: 4.8,
-    monthlyVisits: '100M+',
+    monthlyVisits: '12M+',
     imageUrl: 'https://picsum.photos/400/200?random=10',
-    features: ['Magic Edit', 'Magic Write', 'Design Generation']
+    features: ['Image Guidance', 'Real-time Canvas', '3D Texture Gen']
+  },
+  {
+    id: '11',
+    name: 'Surfer SEO',
+    description: 'Boost your organic traffic with an AI-driven content intelligence strategy.',
+    category: ToolCategory.TEXT,
+    affiliateLink: 'https://surferseo.com?fpr=your-id',
+    priceModel: 'Paid',
+    rating: 4.6,
+    monthlyVisits: '800k+',
+    imageUrl: 'https://picsum.photos/400/200?random=11',
+    features: ['Content Editor', 'Keyword Research', 'Audit'],
+    offer: '7-Day Money Back'
+  },
+  {
+    id: '12',
+    name: 'InVideo',
+    description: 'Turn ideas into videos instantly. Great for YouTube and Social Media.',
+    category: ToolCategory.VIDEO,
+    affiliateLink: 'https://invideo.io?ref=your-id',
+    priceModel: 'Freemium',
+    rating: 4.5,
+    monthlyVisits: '6M+',
+    imageUrl: 'https://picsum.photos/400/200?random=12',
+    features: ['5000+ Templates', 'Stock Media', 'AI Script Gen']
+  },
+  {
+    id: '13',
+    name: 'Taskade',
+    description: 'AI-powered productivity workspace for teams. Mind maps, lists, and chat.',
+    category: ToolCategory.PRODUCTIVITY,
+    affiliateLink: 'https://taskade.com?via=your-id',
+    priceModel: 'Freemium',
+    rating: 4.7,
+    monthlyVisits: '2M+',
+    imageUrl: 'https://picsum.photos/400/200?random=13',
+    features: ['AI Agents', 'Workflow Automation', 'Team Chat'],
+    offer: 'Free Forever Plan'
+  },
+  {
+    id: '14',
+    name: 'Otter.ai',
+    description: 'AI meeting assistant that records audio, writes notes, and captures slides.',
+    category: ToolCategory.PRODUCTIVITY,
+    affiliateLink: 'https://otter.ai/referrals/your-id',
+    priceModel: 'Freemium',
+    rating: 4.6,
+    monthlyVisits: '5M+',
+    imageUrl: 'https://picsum.photos/400/200?random=14',
+    features: ['Real-time Transcripts', 'Meeting Summary', 'Speaker ID']
+  },
+  {
+    id: '15',
+    name: 'FeedHive',
+    description: 'AI social media management tool for scheduling and recycling content.',
+    category: ToolCategory.SOCIAL,
+    affiliateLink: 'https://feedhive.com?fpr=your-id',
+    priceModel: 'Paid',
+    rating: 4.8,
+    monthlyVisits: '300k+',
+    imageUrl: 'https://picsum.photos/400/200?random=15',
+    features: ['AI Post Prediction', 'Recycling', 'Collaboration']
   }
 ];
